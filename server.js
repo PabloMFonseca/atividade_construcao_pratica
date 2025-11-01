@@ -8,7 +8,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-// Lista de produtos fixos (mock)
+
 const produtos = [
   {
     id: 1,
@@ -34,12 +34,12 @@ const produtos = [
   },
 ];
 
-// Rota GET -> retorna produtos
+
 app.get("/api/produtos", (req, res) => {
   res.json(produtos);
 });
 
-// Rota POST -> salvar inscrição
+
 app.post("/api/inscricao", (req, res) => {
   const { email_inscrito } = req.body;
 
@@ -61,3 +61,4 @@ app.post("/api/inscricao", (req, res) => {
 // Inicializa servidor
 const PORT = 3000;
 app.listen(PORT, () => console.log(`🚀 Servidor rodando em http://localhost:${PORT}`));
+
