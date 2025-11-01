@@ -1,4 +1,3 @@
-// Carregar produtos
 async function carregarProdutos() {
   try {
     const res = await fetch("/api/produtos");
@@ -21,14 +20,14 @@ async function carregarProdutos() {
   }
 }
 
-// Enviar inscrição
+
 document.getElementById("formInscricao").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const email = document.getElementById("email").value.trim();
   const msg = document.getElementById("mensagem");
 
-  // validação
+
   const emailValido = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   if (!emailValido.test(email)) {
     msg.textContent = "Digite um e-mail válido!";
@@ -54,3 +53,4 @@ document.getElementById("formInscricao").addEventListener("submit", async (e) =>
 });
 
 carregarProdutos();
+
